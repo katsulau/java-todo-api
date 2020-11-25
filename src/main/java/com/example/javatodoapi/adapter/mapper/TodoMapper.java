@@ -1,8 +1,11 @@
 package com.example.javatodoapi.adapter.mapper;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Component;
 
-import com.example.javatodoapi.adapter.dto.TodoResponse;
+import com.example.javatodoapi.adapter.dto.response.TodoResponse;
 import com.example.javatodoapi.infrastructure.Todo;
 
 @Component
@@ -19,4 +22,9 @@ public class TodoMapper {
 
         return todoResponse;
     }
+
+    public static List<TodoResponse> mapToTodoResponseList(List<Todo> todoList) {
+        return todoList.stream().map(TodoMapper::mappingToTodoResponse).collect(Collectors.toList());
+    }
+
 }

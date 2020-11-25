@@ -1,4 +1,4 @@
-package com.example.javatodoapi.adapter.dto;
+package com.example.javatodoapi.adapter.dto.response;
 
 
 public class ExceptionResponse {
